@@ -224,7 +224,7 @@ def main():
         print("FPS: {}".format(fps))
          #################
         #print(darknet.draw_boxes(detections, image_resized, class_colors))
-        #print('Found {} boxes for {}'.format(len(out_boxes), image_name))
+        print('Found {} boxes for {}'.format(len(out_boxes), image_name))
         
         if not args.dont_show:
             cv2.imshow('Inference', image)
