@@ -164,10 +164,10 @@ def save_annotations(name, image, detections, class_names):
     """
     file_name = name.split(".")[:-1][0] + ".txt"
     with open(file_name, "w") as f:
-     #   for label, confidence, bbox in detections:
-     #       x, y, w, h = convert2relative(image, bbox)
-     #       label = class_names.index(label)
-     #       f.write("{} {:.4f} {:.4f} {:.4f} {:.4f} {:.4f}\n".format(label, x, y, w, h, float(confidence)))
+        for label, confidence, bbox in detections:
+            x, y, w, h = convert2relative(image, bbox)
+            label = class_names.index(label)
+            f.write("{} {:.4f} {:.4f} {:.4f} {:.4f} {:.4f}\n".format(label, x, y, w, h, float(confidence)))
 
 
 def batch_detection_example():
@@ -194,7 +194,7 @@ def main():
     args = parser()
     check_arguments_errors(args)
 
-    random.seed(3)  # deterministic bbox colors
+    random.seed(7)  # deterministic bbox colors
     network, class_names, class_colors = darknet.load_network(
         args.config_file,
         args.data_file,
