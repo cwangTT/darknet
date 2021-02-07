@@ -164,10 +164,10 @@ def save_annotations(name, image, detections, class_names):
     """
     file_name = name.split(".")[:-1][0] + ".txt"
     with open(file_name, "w") as f:
-        for label, confidence, bbox in detections:
-            x, y, w, h = convert2relative(image, bbox)
-            label = class_names.index(label)
-            # f.write("{} {:.4f} {:.4f} {:.4f} {:.4f} {:.4f}\n".format(label, x, y, w, h, float(confidence)))
+     #   for label, confidence, bbox in detections:
+     #       x, y, w, h = convert2relative(image, bbox)
+     #       label = class_names.index(label)
+     #       f.write("{} {:.4f} {:.4f} {:.4f} {:.4f} {:.4f}\n".format(label, x, y, w, h, float(confidence)))
 
 
 def batch_detection_example():
