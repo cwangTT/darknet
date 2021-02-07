@@ -194,7 +194,7 @@ def main():
     args = parser()
     check_arguments_errors(args)
 
-    random.seed(7)  # deterministic bbox colors
+    random.seed(3)  # deterministic bbox colors
     network, class_names, class_colors = darknet.load_network(
         args.config_file,
         args.data_file,
